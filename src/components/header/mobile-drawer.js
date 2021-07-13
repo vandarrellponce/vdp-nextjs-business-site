@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Box } from 'theme-ui';
-import { Scrollbars } from 'react-custom-scrollbars';
-import Drawer from 'components/drawer';
-import { IoMdClose, IoMdMenu } from 'react-icons/io';
-import { Link } from 'react-scroll';
-import { FaFacebookF, FaTwitter, FaGithubAlt, FaDribbble } from 'react-icons/fa';
-import menuItems from './header.data';
+import React, { useState } from 'react'
+import { Box } from 'theme-ui'
+import { Scrollbars } from 'react-custom-scrollbars'
+import Drawer from 'components/drawer'
+import { IoMdClose, IoMdMenu } from 'react-icons/io'
+import { Link } from 'react-scroll'
+import { FaFacebookF, FaTwitter, FaGithubAlt, FaDribbble } from 'react-icons/fa'
+import menuItems from './header.data'
 
 const social = [
   {
@@ -24,13 +24,57 @@ const social = [
     path: '/',
     icon: <FaDribbble />,
   },
-];
+]
 
 export default function MobileDrawer() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   return (
-   <h1>Mobile Drawer</h1>
-  );
-};
+    <Drawer
+      width="320px"
+      drawerHandler={
+        <Box sx={styles.handler}>
+          <IoMdMenu size="26px" />
+        </Box>
+      }
+      open={isDrawerOpen}
+      toggleHandler={() => setIsDrawerOpen((prevState) => !prevState)}
+      closeButton={<IoMdClose size="24px" color="#000000" />}
+      drawerStyle={styles.drawer}
+      closeBtnStyle={styles.close}
+    >
+      <Scrollbars autoHide>
+        <Box sx={styles.content}>
+          <Box sx={styles.menu}>
+            {menuItems.map((item, i) => {
+              return (
+                <Link
+                  activeClass="active"
+                  to={item.path}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  key={i}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
+          </Box>
+          <Box sx={styles.menuFooter}>
+            <Box sx={styles.social}>
+              {social.map((item, i) => (
+                <Box as="span" key={i} sx={styles.social.icon}>
+                  <Link to={item.path}>{item.icon}</Link>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+      </Scrollbars>
+    </Drawer>
+  )
+}
 
 const styles = {
   handler: {
@@ -138,4 +182,4 @@ const styles = {
     justifyContent: 'center',
     py: '0',
   },
-};
+}
