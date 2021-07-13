@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 /** @jsx jsx */
-import { jsx, Container, Box, Grid, Text, Heading, Button, Image } from 'theme-ui';
-import { keyframes } from '@emotion/core';
-import TextFeature from 'components/text-feature';
-import ModalVideo from 'react-modal-video';
-import { IoIosPlay } from 'react-icons/io';
+import {
+  jsx,
+  Container,
+  Box,
+  Grid,
+  Text,
+  Heading,
+  Button,
+  Image,
+} from 'theme-ui'
+import { keyframes } from '@emotion/core'
+import TextFeature from 'components/text-feature'
+import ModalVideo from 'react-modal-video'
+import { IoIosPlay } from 'react-icons/io'
 
-import ServiceThumb from 'assets/service-thumb.png';
-import shapePattern from 'assets/shape-pattern1.png';
+import ServiceThumb from 'assets/service-thumb.png'
+import shapePattern from 'assets/shape-pattern1.png'
 
-import Smart from 'assets/services/smart.svg';
-import Secure from 'assets/services/secure.svg';
+import Smart from 'assets/services/smart.svg'
+import Secure from 'assets/services/secure.svg'
 
 const data = {
   subTitle: 'our services',
@@ -33,12 +42,45 @@ const data = {
         'Get your blood tests delivered at let home collect sample from the victory of the managements. your blood tests.',
     },
   ],
-};
+}
 
 export default function ServiceSection() {
+  const handleClick = (e) => {
+    e.preventDefault()
+
+    setVideoOpen(true)
+  }
   return (
-    <h1>Service Section</h1>
-  );
+    <section sx={{ variant: 'section.services' }}>
+      <Container sx={styles.containerBox}>
+        <Box sx={styles.thumbnail}>
+          <Image
+            src={
+              'https://lh3.googleusercontent.com/proxy/bbOJdWuv9emNcXSdEr2wBSfMFvazN3N2BmvKFDZYWDdk-7-_elxMstoENKWunCjNvz29R7ehxXpyWnrVo_1hdr3dUchTwkjHXddrKHo6i3jDUW-9pxrjuPf1'
+            }
+            style={{ borderRadius: '12px' }}
+            alt="thumbnail"
+          />
+
+          <Button
+            sx={styles.videoBtn}
+            onClick={handleClick}
+            aria-label="Play Button"
+          >
+            <span>
+              <IoIosPlay />
+            </span>
+          </Button>
+          <Box sx={styles.shapeBox}>
+            <Image src={shapePattern} alt="shape" />
+          </Box>
+        </Box>
+        <Box sx={styles.contentBox}>
+          <TextFeature subTitle={data.subTitle} title={data.title} />
+        </Box>
+      </Container>
+    </section>
+  )
 }
 
 const playPluse = keyframes`
@@ -51,7 +93,7 @@ const playPluse = keyframes`
 	transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
     opacity: 0;
   }
-`;
+`
 
 const styles = {
   coreFeature: {
@@ -190,4 +232,4 @@ const styles = {
       left: 0,
     },
   },
-};
+}
