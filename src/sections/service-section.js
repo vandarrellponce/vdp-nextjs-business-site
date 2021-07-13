@@ -45,6 +45,8 @@ const data = {
 }
 
 export default function ServiceSection() {
+  const [videoOpen, setVideoOpen] = useState(false)
+
   const handleClick = (e) => {
     e.preventDefault()
 
@@ -58,7 +60,11 @@ export default function ServiceSection() {
             src={
               'https://lh3.googleusercontent.com/proxy/bbOJdWuv9emNcXSdEr2wBSfMFvazN3N2BmvKFDZYWDdk-7-_elxMstoENKWunCjNvz29R7ehxXpyWnrVo_1hdr3dUchTwkjHXddrKHo6i3jDUW-9pxrjuPf1'
             }
-            style={{ borderRadius: '12px' }}
+            style={{
+              borderRadius: '12px',
+              height: '450px',
+              objectFit: 'contain',
+            }}
             alt="thumbnail"
           />
 
@@ -76,9 +82,35 @@ export default function ServiceSection() {
           </Box>
         </Box>
         <Box sx={styles.contentBox}>
-          <TextFeature subTitle={data.subTitle} title={data.title} />
+          <TextFeature
+            subTitle={data.subTitle}
+            title={data.title}
+            description="This is some space for a description"
+          />
+
+          <Grid sx={styles.grid}>
+            {data.features.map((feature, i) => (
+              <Box sx={styles.card} key={i}>
+                <Image
+                  src={feature.imgSrc}
+                  alt={feature.altText}
+                  sx={styles.icon}
+                ></Image>
+                <Box sx={styles.wrapper}>
+                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
+                  <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
+                </Box>
+              </Box>
+            ))}
+          </Grid>
         </Box>
       </Container>
+      <ModalVideo
+        channel="youtube"
+        isOpen={videoOpen}
+        videoId="8MErNHssbVQ"
+        onClose={() => setVideoOpen(false)}
+      />
     </section>
   )
 }
