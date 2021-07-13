@@ -393,4 +393,4 @@ export default {
       whiteSpace: 'nowrap !important',
     },
   },
-};
+}
