@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Container, Grid } from 'theme-ui';
-import SectionHeader from '../components/section-header';
-import FeatureCardColumn from 'components/feature-card-column.js';
-import Performance from 'assets/key-feature/performance.svg';
-import Partnership from 'assets/key-feature/partnership.svg';
-import Subscription from 'assets/key-feature/subscription.svg';
-import Support from 'assets/key-feature/support.svg';
+import { jsx } from 'theme-ui'
+import { Container, Grid } from 'theme-ui'
+import SectionHeader from '../components/section-header'
+import FeatureCardColumn from 'components/feature-card-column.js'
+import Performance from 'assets/key-feature/performance.svg'
+import Partnership from 'assets/key-feature/partnership.svg'
+import Subscription from 'assets/key-feature/subscription.svg'
+import Support from 'assets/key-feature/support.svg'
 
 const data = [
   {
@@ -41,12 +41,19 @@ const data = [
     text:
       'Get your blood tests delivered at home collect a sample from the your blood tests.',
   },
-];
+]
 
 export default function KeyFeature() {
   return (
-   <h1>Key Feature</h1>
-  );
+    <section sx={{ variant: 'section.keyFeature' }} id="feature">
+      <Container>
+        <SectionHeader
+          slogan="Whats the function"
+          title="Meet the feature of our product"
+        />
+      </Container>
+    </section>
+  )
 }
 
 const styles = {
@@ -70,4 +77,4 @@ const styles = {
       'repeat(4,1fr)',
     ],
   },
-};
+}
