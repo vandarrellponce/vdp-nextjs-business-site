@@ -1,14 +1,40 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
-import BannerImg from 'assets/banner-thumb.png';
-import ShapeLeft from 'assets/shape-left.png';
-import ShapeRight from 'assets/shape-right.png';
+import { jsx } from 'theme-ui'
+import { Container, Box, Heading, Text, Image, Button } from 'theme-ui'
+import BannerImg from 'assets/banner-thumb.png'
+import ShapeLeft from 'assets/shape-left.png'
+import ShapeRight from 'assets/shape-right.png'
+
+// genetec dark image - 'https://www.sourcesecurity.com/img/news/920/genetec-announces-security-centre-hybrid-cloud-architectures-920x533.jpg'
 
 export default function Banner() {
   return (
-    <h1>Banner</h1>
-  );
+    <section sx={styles.banner}>
+      <Container sx={styles.banner.container}>
+        <Box sx={styles.banner.contentBox}>
+          <Heading as="h1" variant="heroPrimary">
+            Top Quality Security & Solutions Provider in Asia
+          </Heading>
+          <Text as="p" variant="heroSecondary">
+            If you need to design and build your security systems with the help
+            of security professionals, then this is the place to go!
+          </Text>
+          <Button variant="primary">Explore</Button>
+        </Box>
+
+        <Box sx={styles.banner.imageBox}>
+          <Image
+            alt="Genetec Security Center Dashboard"
+            style={{ borderRadius: '12px' }}
+            src={
+              'https://securityelectronicsandnetworks.com/wp-content/uploads/2020/11/Genetec-Dashboards-MR-1024x576.png'
+            }
+          ></Image>
+          {/* <Image src={BannerImg}></Image> */}
+        </Box>
+      </Container>
+    </section>
+  )
 }
 
 const styles = {
@@ -66,4 +92,4 @@ const styles = {
       },
     },
   },
-};
+}
