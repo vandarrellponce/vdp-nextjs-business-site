@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Heading, Text, Button, Link } from 'theme-ui';
+import { jsx, Box, Heading, Text, Button, Link } from 'theme-ui'
 
 export default function TextFeature({
   subTitle,
@@ -9,8 +9,32 @@ export default function TextFeature({
   btnURL = '#',
 }) {
   return (
-    <h1>TextFeature</h1>
-  );
+    <Box sx={styles.card}>
+      <Box sx={styles.wrapper}>
+        <Text as="P" sx={styles.wrapper.subTitle}>
+          {subTitle}
+        </Text>
+        <Heading as="h2" sx={styles.wrapper.title}>
+          {title}
+        </Heading>
+      </Box>
+
+      {description && (
+        <Text as="p" className="description" sx={styles.description}>
+          {description}
+        </Text>
+      )}
+
+      {btnName && (
+        <Link href={btnURL} variant="default">
+          <Button variant="primary" aria-label={btnName}>
+            {btnName}
+          </Button>
+          j
+        </Link>
+      )}
+    </Box>
+  )
 }
 
 const styles = {
@@ -53,4 +77,4 @@ const styles = {
     color: 'text_secondary',
     mb: '30px',
   },
-};
+}
