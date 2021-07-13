@@ -10,11 +10,12 @@ export default function Logo({ src, ...rest }) {
         variant: 'links.logo',
         display: 'flex',
         cursor: 'pointer',
+        height: 50,
         mr: 15,
       }}
       {...rest}
     >
-      <Image src={src} alt="business logo" />
+      <Image src={src} alt="Esscor Cebu Logo" />
     </Link>
   )
 }

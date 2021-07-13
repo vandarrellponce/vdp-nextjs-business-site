@@ -4,6 +4,7 @@ import { keyframes } from '@emotion/core'
 import { Link } from 'react-scroll'
 import Logo from 'components/logo'
 import LogoDark from 'assets/logo.svg'
+import EsscorLogo from 'assets/esscor/esscorLogo3.png'
 import MobileDrawer from './mobile-drawer'
 import menuItems from './header.data'
 
@@ -11,7 +12,7 @@ export default function Header({ className }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
-        <Logo src={LogoDark} />
+        <Logo src={EsscorLogo} />
         <Flex as="nav" sx={styles.nav}>
           {menuItems.map((item, i) => {
             return (
