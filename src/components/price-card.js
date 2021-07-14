@@ -1,6 +1,6 @@
-import { Box, Card, Text, Heading, Button } from 'theme-ui';
-import React from 'react';
-import List from './list';
+import { Box, Card, Text, Heading, Button } from 'theme-ui'
+import React from 'react'
+import List from './list'
 
 export default function PriceCard({
   data: {
@@ -14,8 +14,22 @@ export default function PriceCard({
   },
 }) {
   return (
-    <h1>PriceCard</h1>
-  );
+    <Card
+      className={header ? 'package__card active' : 'package__card'}
+      sx={styles.pricingBox}
+    >
+      {header && <Text sx={styles.header}>{header}</Text>}
+      <Box>
+        <Box className="package__header" sx={styles.pricingHeader}>
+          <Heading className="package__name" variant="title">
+            {name}
+          </Heading>
+          <Text as="p">{description}</Text>
+        </Box>
+        <List />
+      </Box>
+    </Card>
+  )
 }
 
 const styles = {
@@ -123,4 +137,4 @@ const styles = {
       p: '20px 0 0',
     },
   },
-};
+}
