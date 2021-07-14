@@ -7,18 +7,18 @@ import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 import Member1 from 'assets/esscor/Slide1.png'
 import Member2 from 'assets/esscor/Slide2.png'
-import Member3 from 'assets/team/member-3.png'
-import Member4 from 'assets/team/member-4.png'
-import Member5 from 'assets/team/member-5.png'
-import Member6 from 'assets/team/member-6.png'
+import Member3 from 'assets/esscor/Slide3.png'
+import Member4 from 'assets/esscor/Slide4.png'
+import Member5 from 'assets/esscor/Slide5.png'
+import Member6 from 'assets/esscor/Slide6.png'
 
 const data = [
   {
     id: 1,
     imgSrc: Member1,
-    altText: 'Saimon Harmer',
-    title: 'Saimon Harmer',
-    designation: 'CEO and Founder',
+    altText: 'Dexter Loquinario',
+    title: 'Dexter Loquinario',
+    designation: 'Senior Account Manager',
     socialProfile: [
       {
         id: 1,
@@ -43,9 +43,9 @@ const data = [
   {
     id: 2,
     imgSrc: Member2,
-    altText: 'Aaron Nunez',
-    title: 'Aaron Nunez',
-    designation: 'Founder',
+    altText: 'Algin Bacalso',
+    title: 'Algin Bacalso',
+    designation: 'Project Engineer',
     socialProfile: [
       {
         id: 1,
@@ -70,9 +70,9 @@ const data = [
   {
     id: 3,
     imgSrc: Member3,
-    altText: 'Aaron Nunez',
-    title: 'Aaron Nunez',
-    designation: 'Web Designer',
+    altText: 'Paulito Milang',
+    title: 'Paulito Milang',
+    designation: 'Hardcore Technician',
     socialProfile: [
       {
         id: 1,
@@ -97,9 +97,9 @@ const data = [
   {
     id: 4,
     imgSrc: Member4,
-    altText: 'Lina Jutila',
-    title: 'Lina Jutila',
-    designation: 'Web Developer',
+    altText: 'Jhon Frederic Getigan',
+    title: 'Jhon Frederic Getigan',
+    designation: 'Systems Engineer',
     socialProfile: [
       {
         id: 1,
@@ -124,9 +124,9 @@ const data = [
   {
     id: 5,
     imgSrc: Member5,
-    altText: 'Saimon Harmer',
-    title: 'Saimon Harmer',
-    designation: 'CEO and Founder',
+    altText: 'Eleazar Bohol',
+    title: 'Eleazar Bohol',
+    designation: 'Systems Engineer',
     socialProfile: [
       {
         id: 1,
@@ -151,9 +151,9 @@ const data = [
   {
     id: 6,
     imgSrc: Member6,
-    altText: 'Aaron Nunez',
-    title: 'Aaron Nunez',
-    designation: 'Web Designer',
+    altText: 'Van Darrell Ponce',
+    title: 'Van Darrell Ponce',
+    designation: 'Solutions Engineer / Web Developer',
     socialProfile: [
       {
         id: 1,
@@ -179,10 +179,16 @@ const data = [
 
 export default function TeamSection() {
   return (
-    <section>
+    <section
+      style={{
+        backgroundColor: 'rgb(250,250,250)',
+        paddingTop: '40px',
+        marginBottom: '40px',
+      }}
+    >
       <Container>
         <SectionHeader
-          slogan="Our Team"
+          slogan="Meet Our Team"
           title="The most qualified and talented individuals"
         />
         <Grid sx={styles.grid}>

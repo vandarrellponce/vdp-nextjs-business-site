@@ -188,8 +188,8 @@ const styles = {
       letterSpacing: '-0.24px',
       transition: 'all 0.3s',
       '&.active': {
-        color: '#0f2137',
-        backgroundColor: '#ffffff',
+        color: '#FFFFFF',
+        backgroundColor: '#C4423F',
         boxShadow: '0 3px 4px rgba(38, 78, 118, 0.1)',
       },
       '&:focus': {
