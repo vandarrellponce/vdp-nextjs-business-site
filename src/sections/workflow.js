@@ -1,43 +1,63 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Container, Grid, Box, Heading, Text } from 'theme-ui';
-import SectionHeader from 'components/section-header';
+import { jsx } from 'theme-ui'
+import { Container, Grid, Box, Heading, Text } from 'theme-ui'
+import SectionHeader from 'components/section-header'
 
-import PatternBG from 'assets/patternBG.png';
-import ArrowOdd from 'assets/arrowOdd.svg';
-import ArrowEven from 'assets/arrowEven.svg';
+import PatternBG from 'assets/patternBG.png'
+import ArrowOdd from 'assets/arrowOdd.svg'
+import ArrowEven from 'assets/arrowEven.svg'
 
 const data = [
   {
     id: 1,
-    title: 'Set disbursement Instructions',
+    title: 'Assistance from account manager',
     text:
       'Get your blood tests delivered at home collect a sample from the your blood tests.',
   },
   {
     id: 2,
-    title: 'Assembly retrieves funds from your account',
+    title: 'Conduct system assessment',
     text:
       'Get your blood tests delivered at home collect a sample from the your blood tests.',
   },
   {
     id: 3,
-    title: 'Assembly initiates disbursement',
+    title: 'System design and proposal',
     text:
       'Get your blood tests delivered at home collect a sample from the your blood tests.',
   },
   {
     id: 4,
-    title: 'Customer receives funds payment',
+    title: 'Project implementation',
     text:
       'Get your blood tests delivered at home collect a sample from the your blood tests.',
   },
-];
+]
 
 export default function WorkFlow() {
   return (
-    <h1>Workflow</h1>
-  );
+    <section sx={styles.workflow}>
+      <Container>
+        <SectionHeader
+          slogan="Whats the proccess"
+          title="This is how we can help you enhance your security systems"
+          isWhite
+        />
+
+        <Grid sx={styles.grid}>
+          {data.map((item) => (
+            <Box sx={styles.card} key={item.id}>
+              <Box sx={styles.iconBox}>{`${item.id}`}</Box>
+              <Box sx={styles.wrapper}>
+                <Heading sx={styles.wrapper.title}>{item.title}</Heading>
+                <Text sx={styles.wrapper.subTitle}>{item.text}</Text>
+              </Box>
+            </Box>
+          ))}
+        </Grid>
+      </Container>
+    </section>
+  )
 }
 
 const styles = {
@@ -141,4 +161,4 @@ const styles = {
       pr: [0, null, null, null, null, 5],
     },
   },
-};
+}
