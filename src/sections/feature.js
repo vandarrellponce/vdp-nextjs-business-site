@@ -47,7 +47,11 @@ export default function Feature() {
   return (
     <section
       sx={{ variant: 'section.feature' }}
-      style={{ backgroundColor: 'rgb(250,250,250)', paddingTop: '40px' }}
+      style={{
+        backgroundColor: 'rgb(250,250,250)',
+        paddingTop: '40px',
+        marginBottom: '40px',
+      }}
     >
       <Container>
         <SectionHeader
