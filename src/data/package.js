@@ -6,7 +6,7 @@ const packages = {
       name: 'Free Plan',
       description: 'For Small teams or office',
       buttonText: 'Start free trail',
-      priceWithUnit: '$0',
+      priceWithUnit: '₱0',
       points: [
         {
           id: 1,
@@ -38,7 +38,7 @@ const packages = {
       id: 2,
       name: 'Business king',
       description: 'For Enterprise business',
-      priceWithUnit: '$15',
+      priceWithUnit: '₱15',
       buttonText: 'Create account',
       anotherOption: 'Or Start 14 Days trail',
       points: [
@@ -74,7 +74,7 @@ const packages = {
       headerIcon: <IoIosCheckmarkCircle />,
       name: 'Pro Master',
       description: 'For pro level developers',
-      priceWithUnit: '$24',
+      priceWithUnit: '₱24',
       buttonText: 'Create account',
       anotherOption: 'Or Start 14 Days trail',
       points: [
@@ -111,7 +111,7 @@ const packages = {
       name: 'Free Plan',
       description: 'For Small teams or office',
       buttonText: 'Start free trail',
-      priceWithUnit: '$0',
+      priceWithUnit: '₱0',
       points: [
         {
           id: 1,
@@ -143,7 +143,7 @@ const packages = {
       id: 2,
       name: 'Business king',
       description: 'For Enterprise business',
-      priceWithUnit: '$25',
+      priceWithUnit: '₱25',
       buttonText: 'Create account',
       anotherOption: 'Or Start 10 Days trail',
       points: [
@@ -179,7 +179,7 @@ const packages = {
       headerIcon: <IoIosCheckmarkCircle />,
       name: 'Pro Master',
       description: 'For pro level developers',
-      priceWithUnit: '$39',
+      priceWithUnit: '₱39',
       buttonText: 'Create account',
       anotherOption: 'Or Start 10 Days trail',
       points: [
