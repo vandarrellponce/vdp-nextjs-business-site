@@ -46,7 +46,13 @@ const data = [
 export default function KeyFeature() {
   return (
     <section sx={{ variant: 'section.keyFeature' }} id="feature">
-      <Container>
+      <Container
+        style={{
+          backgroundColor: 'rgb(250,250,250)',
+          paddingTop: '40px',
+          paddingBottom: '40px',
+        }}
+      >
         <SectionHeader
           slogan="Whats the function"
           title="Meet the feature of our product"

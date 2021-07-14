@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Container, Grid } from 'theme-ui';
-import SectionHeader from 'components/section-header';
-import FeatureCard from 'components/feature-card.js';
-import Performance from 'assets/feature/performance.svg';
-import Partnership from 'assets/feature/partnership.svg';
-import Subscription from 'assets/feature/subscription.svg';
-import Support from 'assets/feature/support.svg';
+import { jsx } from 'theme-ui'
+import { Container, Grid } from 'theme-ui'
+import SectionHeader from 'components/section-header'
+import FeatureCard from 'components/feature-card.js'
+import Performance from 'assets/feature/performance.svg'
+import Partnership from 'assets/feature/partnership.svg'
+import Subscription from 'assets/feature/subscription.svg'
+import Support from 'assets/feature/support.svg'
 
 const data = [
   {
@@ -41,12 +41,28 @@ const data = [
     text:
       'We believe it’s important for everyone to have access to software – especially when it comes to digital learning be navigated by keyboard and screen readers.',
   },
-];
+]
 
 export default function Feature() {
   return (
-   <h1>Feature</h1>
-  );
+    <section
+      sx={{ variant: 'section.feature' }}
+      style={{ backgroundColor: 'rgb(250,250,250)', paddingTop: '40px' }}
+    >
+      <Container>
+        <SectionHeader
+          slogan="Quality Features"
+          title="Amazing useful features, this is for the title"
+        />
+
+        <Grid sx={styles.grid}>
+          {data.map((item, i) => (
+            <FeatureCard />
+          ))}
+        </Grid>
+      </Container>
+    </section>
+  )
 }
 
 const styles = {
@@ -65,4 +81,4 @@ const styles = {
     ],
     gridTemplateColumns: ['repeat(1,1fr)', null, 'repeat(2,1fr)'],
   },
-};
+}
