@@ -57,7 +57,13 @@ export default function Feature() {
 
         <Grid sx={styles.grid}>
           {data.map((item, i) => (
-            <FeatureCard />
+            <FeatureCard
+              key={i}
+              src={item.imgSrc}
+              altText={item.altText}
+              title={item.title}
+              text={item.text}
+            />
           ))}
         </Grid>
       </Container>
