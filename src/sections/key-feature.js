@@ -45,14 +45,18 @@ const data = [
 
 export default function KeyFeature() {
   return (
-    <section sx={{ variant: 'section.keyFeature' }} id="feature">
-      <Container
-        style={{
-          backgroundColor: 'rgb(250,250,250)',
-          paddingTop: '40px',
-          paddingBottom: '40px',
-        }}
-      >
+    <section
+      sx={{ variant: 'section.keyFeature' }}
+      id="feature"
+      style={{
+        backgroundColor: 'rgb(250,250,250)',
+        paddingTop: '40px',
+        paddingBottom: '40px',
+        marginTop: '80px',
+        marginBottom: '40px',
+      }}
+    >
+      <Container>
         <SectionHeader
           slogan="Whats the function"
           title="Meet the feature of our product"
