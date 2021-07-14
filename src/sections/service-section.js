@@ -15,7 +15,7 @@ import TextFeature from 'components/text-feature'
 import ModalVideo from 'react-modal-video'
 import { IoIosPlay } from 'react-icons/io'
 
-import ServiceThumb from 'assets/service-thumb.png'
+import ServiceThumb from 'assets/esscor/managed.jpg'
 import shapePattern from 'assets/shape-pattern1.png'
 
 import Smart from 'assets/services/smart.svg'
@@ -57,9 +57,7 @@ export default function ServiceSection() {
       <Container sx={styles.containerBox}>
         <Box sx={styles.thumbnail}>
           <Image
-            src={
-              'https://lh3.googleusercontent.com/proxy/bbOJdWuv9emNcXSdEr2wBSfMFvazN3N2BmvKFDZYWDdk-7-_elxMstoENKWunCjNvz29R7ehxXpyWnrVo_1hdr3dUchTwkjHXddrKHo6i3jDUW-9pxrjuPf1'
-            }
+            src={ServiceThumb}
             style={{
               borderRadius: '12px',
               height: '450px',
