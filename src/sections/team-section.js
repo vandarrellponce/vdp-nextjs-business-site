@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { Container, Grid } from 'theme-ui'
 import SectionHeader from 'components/section-header'
 import TeamCard from 'components/team-card'
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 import Member1 from 'assets/esscor/Slide1.png'
 import Member2 from 'assets/esscor/Slide2.png'
@@ -30,7 +30,7 @@ const data = [
         id: 2,
         name: 'twitter',
         path: '#',
-        icon: <FaTwitter />,
+        icon: <FaLinkedin />,
       },
       {
         id: 3,
@@ -57,7 +57,7 @@ const data = [
         id: 2,
         name: 'twitter',
         path: '#',
-        icon: <FaTwitter />,
+        icon: <FaLinkedin />,
       },
       {
         id: 3,
@@ -84,7 +84,7 @@ const data = [
         id: 2,
         name: 'twitter',
         path: '#',
-        icon: <FaTwitter />,
+        icon: <FaLinkedin />,
       },
       {
         id: 3,
@@ -111,7 +111,7 @@ const data = [
         id: 2,
         name: 'twitter',
         path: '#',
-        icon: <FaTwitter />,
+        icon: <FaLinkedin />,
       },
       {
         id: 3,
@@ -138,7 +138,7 @@ const data = [
         id: 2,
         name: 'twitter',
         path: '#',
-        icon: <FaTwitter />,
+        icon: <FaLinkedin />,
       },
       {
         id: 3,
@@ -165,7 +165,7 @@ const data = [
         id: 2,
         name: 'twitter',
         path: '#',
-        icon: <FaTwitter />,
+        icon: <FaLinkedin />,
       },
       {
         id: 3,
