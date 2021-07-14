@@ -1,225 +1,13 @@
 /** @jsx jsx */
-import { jsx, Container, Box, Flex } from 'theme-ui';
-import { keyframes } from '@emotion/core';
-import React, { useState } from 'react';
-import Carousel from 'react-multi-carousel';
-import PriceCard from 'components/price-card';
-import ButtonGroup from 'components/button-group';
-import SectionHeader from 'components/section-header';
-import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
+import { jsx, Container, Box, Flex } from 'theme-ui'
+import { keyframes } from '@emotion/core'
+import React, { useState } from 'react'
+import Carousel from 'react-multi-carousel'
+import PriceCard from 'components/price-card'
+import ButtonGroup from 'components/button-group'
+import SectionHeader from 'components/section-header'
 
-const packages = {
-  monthly: [
-    {
-      id: 1,
-      name: 'Free Plan',
-      description: 'For Small teams or office',
-      buttonText: 'Start free trail',
-      priceWithUnit: '$0',
-      points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCloseCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: 'Business king',
-      description: 'For Enterprise business',
-      priceWithUnit: '$15',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 14 Days trail',
-      points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
-      ],
-    },
-    {
-      id: 3,
-      header: 'Suggested',
-      headerIcon: <IoIosCheckmarkCircle />,
-      name: 'Pro Master',
-      description: 'For pro level developers',
-      priceWithUnit: '$24',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 14 Days trail',
-      points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
-      ],
-    },
-  ],
-  annual: [
-    {
-      id: 1,
-      name: 'Free Plan',
-      description: 'For Small teams or office',
-      buttonText: 'Start free trail',
-      priceWithUnit: '$0',
-      points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder',
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCloseCircle />,
-          text: 'eCommerce Store ',
-          isAvailable: true,
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: 'Business king',
-      description: 'For Enterprise business',
-      priceWithUnit: '$25',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 10 Days trail',
-      points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder ',
-          isAvailable: true,
-        },
-      ],
-    },
-    {
-      id: 3,
-      header: 'Suggested',
-      headerIcon: <IoIosCheckmarkCircle />,
-      name: 'Pro Master',
-      description: 'For pro level developers',
-      priceWithUnit: '$39',
-      buttonText: 'Create account',
-      anotherOption: 'Or Start 10 Days trail',
-      points: [
-        {
-          id: 1,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'eCommerce Store',
-          isAvailable: true,
-        },
-        {
-          id: 2,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Blog Support Tools',
-          isAvailable: true,
-        },
-        {
-          id: 3,
-          icon: <IoIosCheckmarkCircle />,
-          text: "1,000's of Templates",
-          isAvailable: true,
-        },
-        {
-          id: 4,
-          icon: <IoIosCheckmarkCircle />,
-          text: 'Drag & Drop Builder ',
-          isAvailable: true,
-        },
-      ],
-    },
-  ],
-};
+import packages from 'data/package'
 
 const responsive = {
   desktop: {
@@ -237,10 +25,20 @@ const responsive = {
     items: 1,
     draggable: true,
   },
-};
+}
 
 export default function Package() {
-  const { monthly, annual } = packages;
+  const { monthly, annual } = packages
+
+  const [state, setState] = useState({
+    active: 'monthly',
+    pricingPlan: monthly,
+  })
+
+  const handlePricingPlan = (plan) => {
+    if (plan === 'annual') setState({ active: 'annual', pricingPlan: annual })
+    else setState({ active: 'monthly', pricingPlan: monthly })
+  }
 
   const sliderParams = {
     additionalTransfrom: 0,
@@ -263,11 +61,47 @@ export default function Package() {
     responsive: responsive,
     showDots: false,
     sliderClass: '',
-  };
+  }
 
   return (
-    <h1>Package</h1>
-  );
+    <section id="pricing" sx={{ variant: 'section.pricing' }}>
+      <Container>
+        <SectionHeader slogan="Pricing Plan" title="Choose your pricing plan" />
+        <Flex sx={styles.buttonGroup}>
+          <Box sx={styles.buttonGroupInner}>
+            <button
+              className={state.active === 'monthly' ? 'active' : ''}
+              type="button"
+              aria-label="Monthly"
+              onClick={() => handlePricingPlan('monthly')}
+            >
+              Monthly Plan
+            </button>
+
+            <button
+              className={state.active === 'annual' ? 'active' : ''}
+              type="button"
+              aria-label="Annual"
+              onClick={() => handlePricingPlan('annual')}
+            >
+              Annual Plan
+            </button>
+          </Box>
+        </Flex>
+        <Box sx={styles.pricingWrapper} className="pricing__wrapper">
+          <Carousel {...sliderParams}>
+            {state.pricingPlan.map((plan, i) => {
+              return (
+                <Box sx={styles.pricingItem} key={i}>
+                  <PriceCard data={plan} />
+                </Box>
+              )
+            })}
+          </Carousel>
+        </Box>
+      </Container>
+    </section>
+  )
 }
 
 const fadeIn = keyframes`
@@ -277,7 +111,7 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
   }
-`;
+`
 const fadeIn2 = keyframes`
   from {
     transform: translateY(50%);
@@ -287,7 +121,7 @@ const fadeIn2 = keyframes`
 		transform: translateY(0);
     opacity: 1;
   }
-`;
+`
 const styles = {
   pricingWrapper: {
     mb: '-40px',
@@ -363,4 +197,4 @@ const styles = {
       },
     },
   },
-};
+}
