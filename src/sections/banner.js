@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui'
 import { Container, Box, Heading, Text, Image, Button } from 'theme-ui'
 import BannerImg from 'assets/banner-thumb.png'
+import EsscorBanner from 'assets/esscor/esscorBanner.jpg'
 import ShapeLeft from 'assets/shape-left.png'
 import ShapeRight from 'assets/shape-right.png'
 
@@ -9,37 +10,46 @@ import ShapeRight from 'assets/shape-right.png'
 
 export default function Banner() {
   return (
-    <section sx={styles.banner} id="home">
-      <Container sx={styles.banner.container}>
-        <Box sx={styles.banner.contentBox}>
-          <Heading as="h1" variant="heroPrimary">
-            Top Quality Security & Solutions Provider in Asia
-          </Heading>
-          <Text as="p" variant="heroSecondary">
-            If you need to design and build your security systems with the help
-            of security professionals, then this is the place to go!
-          </Text>
-          <Button variant="primary">Explore</Button>
-        </Box>
+    <div>
+      <Box sx={styles.banner.imageBoxTop}>
+        <Image
+          alt="Genetec Security Center Dashboard"
+          src={EsscorBanner}
+        ></Image>
+      </Box>
 
-        <Box sx={styles.banner.imageBox}>
-          <Image
-            alt="Genetec Security Center Dashboard"
-            style={{ borderRadius: '12px' }}
-            src={
-              'https://securityelectronicsandnetworks.com/wp-content/uploads/2020/11/Genetec-Dashboards-MR-1024x576.png'
-            }
-          ></Image>
-          {/* <Image src={BannerImg}></Image> */}
-        </Box>
-      </Container>
-    </section>
+      <section sx={styles.banner} id="home">
+        <Container sx={styles.banner.container}>
+          <Box sx={styles.banner.contentBox}>
+            <Heading as="h1" variant="heroPrimary">
+              Top Quality Security & Solutions Provider in Asia
+            </Heading>
+            <Text as="p" variant="heroSecondary">
+              If you need to design and build your security systems with the
+              help of security professionals, then this is the place to go!
+            </Text>
+            <Button variant="primary">Explore</Button>
+          </Box>
+
+          <Box sx={styles.banner.imageBox}>
+            <Image
+              alt="Genetec Security Center Dashboard"
+              style={{ borderRadius: '12px' }}
+              src={
+                'https://securityelectronicsandnetworks.com/wp-content/uploads/2020/11/Genetec-Dashboards-MR-1024x576.png'
+              }
+            ></Image>
+            {/* <Image src={BannerImg}></Image> */}
+          </Box>
+        </Container>
+      </section>
+    </div>
   )
 }
 
 const styles = {
   banner: {
-    pt: ['140px', '145px', '155px', '170px', null, null, '180px', '215px'],
+    pt: ['60px', '145px', '155px', '170px', null, null, '180px', '215px'],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: 'relative',
     zIndex: 2,
@@ -89,6 +99,23 @@ const styles = {
       img: {
         position: 'relative',
         height: [245, 'auto'],
+      },
+    },
+    imageBoxTop: {
+      marginTop: '80px',
+      justifyContent: 'center',
+      textAlign: 'center',
+      display: 'inline-flex',
+      width: '100%',
+      mb: [0, null, -6, null, null, '-40px', null, -3],
+      img: {
+        position: 'relative',
+        height: 'auto',
+        width: '100vw',
+        objectFit: 'contain',
+        maskImage:
+          'linear-gradient(0deg, rgba(0, 0, 0, 1) 50%,rgba(0, 0, 0, 0) 100%)',
+        zIndex: -1,
       },
     },
   },

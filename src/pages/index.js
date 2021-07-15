@@ -14,13 +14,11 @@ import Package from '../sections/package'
 import TeamSection from '../sections/team-section'
 import TestimonialCard from '../sections/testimonial'
 
-// "next-sitemap": "^1.6.140"
-
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="NextJS Landing Page" />
+        <SEO title="ESSCOR Cebu" />
         <Banner />
         <KeyFeature />
         <ServiceSection />
