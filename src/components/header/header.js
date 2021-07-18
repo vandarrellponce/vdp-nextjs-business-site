@@ -7,7 +7,6 @@ import LogoDark from 'assets/logo.svg'
 import EsscorLogo from 'assets/esscor/esscorLogo3.png'
 import MobileDrawer from './mobile-drawer'
 import menuItems from './header.data'
-import subMenuItemsData from './subheader.data'
 import { useState } from 'react'
 
 export default function Header({ className }) {
@@ -17,14 +16,19 @@ export default function Header({ className }) {
   const handleStateChange = () => {
     setShowSubHeader((prev) => !prev)
   }
-  const handleSubItemsChange = (flag) => {}
+  const handleHoverOnMainMenu = (item) => {
+    if (item.children?.length) {
+      setSubItems(item.children)
+      setShowSubHeader(true)
+    } else setShowSubHeader(false)
+  }
 
   return (
     <div sx={styles.container}>
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
           <Logo src={EsscorLogo} />
-          <Flex as="nav" sx={styles.nav} onMouseEnter={handleStateChange}>
+          <Flex as="nav" sx={styles.nav}>
             {menuItems.map((item, i) => {
               return (
                 <Link
@@ -35,7 +39,7 @@ export default function Header({ className }) {
                   offset={-70}
                   duration={500}
                   key={i}
-                  onMouseEnter={() => setSubItems(subMenuItemsData[i])}
+                  onMouseEnter={() => handleHoverOnMainMenu(item)}
                 >
                   {item.label}
                 </Link>
